@@ -9,35 +9,62 @@
         * {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
         }
+
 
         header {
             padding: 50px;
         }
-        header, nav, main, footer{
-                        background-color: #e7e9eb
 
+        header,
+        nav,
+        main>section,
+        footer {
+            background-color: #e7e9eb
         }
 
         header>p,
-        nav>p, main>section>p , footer>p {
+        nav>p,
+        main>section>p,
+        footer>p {
             text-align: center;
         }
 
         nav {
             padding: 10px;
+            margin: 5px 0px;
         }
-        main{
+
+        main {
             display: flex;
-            padding: 5px;
+            /* flex-direction: row; */
+            gap: 5px;
         }
-        main>section{
+
+        main>section {
             padding: 50px;
-            flex: 1;
+
+
         }
-      footer{
-        padding: 20px;
-      }
+
+        main>section.sideSection {
+            width: 40%;
+        }
+
+        footer {
+            margin-top: 5px;
+            padding: 20px;
+        }
+        @media(max-width:700px){
+            main{
+                display: flex;
+                flex-direction: column;
+            }
+            main>section.sideSection{
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -50,13 +77,13 @@
         <p>Navogation Menu</p>
     </nav>
     <main>
-        <section>
+        <section class="sideSection">
             <p>Content</p>
         </section>
         <section>
             <p>Main Content</p>
         </section>
-        <section>
+        <section class="sideSection">
             <p>Content</p>
         </section>
     </main>
